@@ -52,3 +52,32 @@ const contactState = function (page) {
     </form>
   `;
 }
+
+// Instantiate pageState
+const page = new PageState();
+
+// Init the first state
+page.init();
+
+// UI vars
+const home = document.getElementById("home"),
+  about = document.getElementById("about"),
+  contact = document.getElementById("contact");
+
+// Home
+home.addEventListener("click", (e) => {
+  page.change(new homeState);
+  e.preventDefault();
+});
+
+// About
+about.addEventListener("click", (e) => {
+  page.change(new aboutState);
+  e.preventDefault();
+});
+
+// Contact
+contact.addEventListener("click", (e) => {
+  page.change(new contactState);
+  e.preventDefault();
+})
